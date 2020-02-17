@@ -6,7 +6,7 @@ const classnames = require('classnames');
 export default function InterviewerListItem(props) {
 
   const interviewerClass = classnames("interviewers__item", {
-    "interviewers--selected": props.selected
+    "interviewers__item--selected": props.selected
   });
 
   return (
