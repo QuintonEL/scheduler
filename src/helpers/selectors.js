@@ -11,6 +11,19 @@ export function getAppointmentsForDay(state, day) {
   }
 };
 
+export function getInterviewersForDay(state, day) {
+  const filteredDays = state.days.filter(eachDay => eachDay.name === day);
+
+  if (filteredDays.length === 0) {
+    return [];
+  } else {
+    const interviewersMapped = filteredDays[0].interviewers.map((interviewer) => {
+      return state.interviewers[interviewer]
+    })
+    return interviewersMapped;
+  }
+};
+
 export function getInterview(state, interview) {
   if (!interview) {
     return null;

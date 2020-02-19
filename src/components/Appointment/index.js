@@ -4,6 +4,7 @@ import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 import useVisualMode from "hooks/useVisualMode";
+import Form from "components/Appointment/Form";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -27,11 +28,12 @@ export default function Appointment(props) {
           onDelete={props.onDelete}
         />
       )}
-      {/* {mode === CREATE && (
+      {mode === CREATE && (
         <Form
-          interviewers={}
-
-      )} */}
+          interviewers={[]}
+          onCancel={() => back(EMPTY)}
+        />
+      )}
     </article>
   )
 }
