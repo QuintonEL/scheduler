@@ -29,6 +29,7 @@ export default function Application(props) {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
           <DayList
+            key={state.days.id}
             days={state.days}
             day={state.day}
             setDay={setDay}
@@ -53,7 +54,7 @@ export default function Application(props) {
           bookInterview={bookInterview}
           cancelInterview={cancelInterview}
         />
-      )})};
+      )})}
       <Appointment key="last" time="5pm" />
       </section>
     </main>
