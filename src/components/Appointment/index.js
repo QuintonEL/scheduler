@@ -18,10 +18,15 @@ const CONFIRM = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
+const ERROR_CREATING = "ERROR_CREATING"
 
 export default function Appointment(props) {
-  
-  const { mode, transition, back } = useVisualMode(
+
+  const {
+    mode,
+    transition,
+    back
+  } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
@@ -30,17 +35,21 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
+    if (name && interviewer) {
     transition(SAVING)
     props.bookInterview(props.id, interview)
-    .then(() => transition(SHOW))
-    .catch(() => transition(ERROR_SAVE, true))
+      .then(() => transition(SHOW))
+      .catch(() => transition(ERROR_SAVE, true))
+    } else {
+      transition(ERROR_CREATING, true)
+    }
   }
 
   function deleting() {
     transition(DELETING, true)
     props.cancelInterview(props.id)
-    .then(() => transition(EMPTY))
-    .catch(() => transition(ERROR_DELETE, true))
+      .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE, true))
   }
 
   return (
@@ -99,6 +108,17 @@ export default function Appointment(props) {
           message="Could not save appointment"
           onClose={() => back()}
         />
+      )}
+      {mode === ERROR_CREATING && (
+        <Error
+          message="Please enter a name and select an interviewer"
+          onClose={() => transition(CREATE)}
+        />
+        // <Form
+        // interviewers={props.interviewers}
+        // onCancel={() => back(EMPTY)}
+        // onSave={save}
+        // />
       )}
     </article>
   )

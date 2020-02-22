@@ -21,15 +21,12 @@ export default function Form (props) {
       <section className="appointment__card-left">
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input
-            className="appointment__create-input text--semi-bold"
+            className={name.length ? "appointment__create-input text--semi-bold" : "appointment__invalid"}
             name="name"
             value={name}
             onChange={(event) => setName(event.target.value)}
             type="text"
             placeholder="Enter Student Name"
-            /*
-              This must be a controlled component
-            */
           />
         </form>
         <InterviewerList interviewers={props.interviewers} value={interviewer} onChange={setInterviewer} />

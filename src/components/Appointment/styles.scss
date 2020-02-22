@@ -144,6 +144,21 @@ $appointment-height: 11rem;
     }
   }
 
+  &__invalid {
+    color: red;
+    background-color: $dark-background;
+    border: 0;
+    border-bottom: 1px solid;
+    font-size: 1.5rem;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   &__status-image {
     margin-right: 2rem;
     animation: rotate 1s linear infinite;
