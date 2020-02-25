@@ -135,6 +135,7 @@ describe("Application", () => {
     
     await waitForElement(() => getByText(container, "Could not save appointment"))
 
+    fireEvent.click(getByAltText(appointment, "Close"));
 
   });
   
@@ -158,5 +159,8 @@ describe("Application", () => {
     fireEvent.click(queryByText(appointment, "Confirm"));
 
     await waitForElement(() => getByText(container, "Could not delete appointment"))
+
+    fireEvent.click(getByAltText(appointment, "Close"));
+
   })
 })
