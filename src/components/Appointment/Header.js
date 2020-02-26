@@ -1,5 +1,6 @@
 import React from "react";
 
+// the content between each interview timeslot
 export default function Header(props) {
 
   return (

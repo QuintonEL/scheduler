@@ -5,7 +5,7 @@ import Appointment from "components/Appointment";
 import { getAppointmentsForDay, getInterviewersForDay, getInterview } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
-
+// function to keep track of the days and number of open slots for each along with all the interview information saved for each
 export default function Application(props) {
 
   const {
@@ -15,6 +15,7 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
+  // array with all the interviewers for each day
   const interviewers = getInterviewersForDay(state, state.day);
 
 

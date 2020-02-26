@@ -1,5 +1,6 @@
 import React from "react";
 
+// the spinning wheel for saving or deleting transitions along with a message
 export default function Status(props) {
 
   return (

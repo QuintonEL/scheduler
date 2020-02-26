@@ -1,3 +1,4 @@
+// test that all functionality of booking an appointment works as intended
 describe("Appointments", () => {
   beforeEach(() => {
     cy.request("GET", "/api/debug/reset");

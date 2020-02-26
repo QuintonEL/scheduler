@@ -1,3 +1,4 @@
+// test that the basic navigation through the site works as intended 
 describe("Navigation", () => {
   it("should visit root", () => {
     cy.visit("/");

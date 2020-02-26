@@ -1,9 +1,12 @@
 import React from "react";
-
 import "components/DayListItem.scss";
+
 const classnames = require('classnames');
 
+// content for a single day in the list of days
 export default function DayListItem(props) {
+
+  // function to decide what to show in the side bar depending on how many spots are left
   const formatSpots = function(props) {
     return (
       props.spots === 0 ? "no spots remaining"

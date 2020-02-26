@@ -1,5 +1,6 @@
 import React from "react";
 
+// after an appointment is booked, the show function decides what to display
 export default function Show(props) {
 
   return(

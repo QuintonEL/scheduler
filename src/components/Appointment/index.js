@@ -20,6 +20,8 @@ const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 const ERROR_CREATING = "ERROR_CREATING"
 
+
+// appointment decides what to show and includes functionality for each
 export default function Appointment(props) {
 
   const {
@@ -30,6 +32,7 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
+  // function for saving, calls the bookInterview function which makes server request, then transitions
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -45,6 +48,7 @@ export default function Appointment(props) {
     }
   }
 
+  // function for deleting, calls the cancelInterview function which makes the server request, then transitions
   function deleting() {
     transition(DELETING, true)
     props.cancelInterview(props.id)
@@ -114,11 +118,6 @@ export default function Appointment(props) {
           message="Please enter a name and select an interviewer"
           onClose={() => transition(CREATE)}
         />
-        // <Form
-        // interviewers={props.interviewers}
-        // onCancel={() => back(EMPTY)}
-        // onSave={save}
-        // />
       )}
     </article>
   )

@@ -3,11 +3,14 @@ import "components/InterviewList.scss";
 import InterviewerListItem from "components/InterviewerListItem";
 import PropTypes from 'prop-types';
 
+// the list of interviewers including all their avatars and names and id's
 export default function InterviewerList(props) {
+
   InterviewerList.propTypes = {
     value: PropTypes.number,
     onChange: PropTypes.func.isRequired
   };
+  
   const interviewers = props.interviewers.map((interviewer) => {
     return (
       <InterviewerListItem

@@ -1,7 +1,9 @@
 import React from "react";
 import DayListItem from "components/DayListItem";
 
+// information about bookings for each day
 export default function DayList(props) {
+  
   const Days = props.days.map((day) => {
     return (
       <DayListItem 

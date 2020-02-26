@@ -1,15 +1,15 @@
 import React from "react";
-
 import "components/Button.scss";
 
 const classnames = require('classnames');
 
+// the buttons for the confirmation window to cancel or confirm changes
 export default function Button(props) {
+
    const buttonClass = classnames("button", {
       "button--confirm": props.confirm,
       "button--danger": props.danger
     });
-   
 
     return (
       <button

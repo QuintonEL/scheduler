@@ -1,5 +1,6 @@
 import React from "react";
 
+// epmty booking time slot with the add button
 export default function Empty(props) {
 
   return (
