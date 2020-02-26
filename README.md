@@ -1,11 +1,11 @@
 # Interview Scheduler
 
-!["Creating a new booking"](docs/creation-form.png)
-!["Monday overview"](docs/monday-overview.png)
-!["Deleting a booking"](docs/delete-confirm.png)
+!["Creating a new booking"](https://github.com/QuintonEL/scheduler/blob/master/docs/creation-form.png?raw=true)
+!["Monday overview"](https://github.com/QuintonEL/scheduler/blob/master/docs/monday-overview.png?raw=true)
+!["Deleting a booking"](https://github.com/QuintonEL/scheduler/blob/master/docs/delete-confirm.png?raw=true)
 
 
-### Netlify is serving the static client assets. Link is in the GitHub project description
+### Netlify is serving the static client assets. The link to the site is in the GitHub project description!
 
 ### CircleCI is managing the continuous integration process
 
